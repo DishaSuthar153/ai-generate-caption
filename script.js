@@ -40,5 +40,23 @@ async function generateCaptions() {
       output.innerHTML = "❌ Error connecting to Gemini API.";
       console.error(error);
     }
+    const copyBtn = document.getElementById("copyBtn");
+
+// After outputting captions, show the copy button
+if (data.candidates && data.candidates.length > 0) {
+  const result = data.candidates[0].content.parts[0].text;
+  output.innerHTML = result.replace(/\n/g, "<br>");
+  copyBtn.style.display = "inline-block";
+
+  copyBtn.onclick = () => {
+    navigator.clipboard.writeText(result).then(() => {
+      copyBtn.innerText = "Copied!";
+      setTimeout(() => (copyBtn.innerText = "Copy Captions"), 2000);
+    });
+  };
+} else {
+  output.innerHTML = "⚠️ No response from Gemini. Try again.";
+  copyBtn.style.display = "none";
+}
   }
   
