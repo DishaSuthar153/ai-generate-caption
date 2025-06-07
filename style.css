@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+    background: white;
+    padding: 2rem;
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 1rem;
+  font-size: 16px;
+}
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#output {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+}
